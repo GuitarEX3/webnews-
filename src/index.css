@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Inter", sans-serif;
+  
+  --color-brand-navy: #0B2A4A;
+  --color-brand-yellow: #F4B400;
+  --color-brand-bg: #F0F2F5;
+  --color-brand-text: #1E293B;
+  --color-brand-white: #FFFFFF;
+  
+  --shadow-sleek: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-sidebar: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-brand-bg text-brand-text transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
+}
+
+@layer components {
+  .sleek-card {
+    @apply bg-white dark:bg-slate-900 rounded-[12px] shadow-sidebar border-t-4 border-transparent transition-all hover:shadow-sleek;
+  }
+  
+  .sleek-card-news {
+    @apply border-t-brand-navy;
+  }
+  
+  .sleek-card-funny {
+    @apply border-t-brand-yellow;
+  }
+  
+  .sleek-badge {
+    @apply px-3 py-1 rounded-[4px] text-[11px] font-bold uppercase tracking-wider;
+  }
+}
